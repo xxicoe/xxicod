@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谢培智 · 投放优化师作品集 | 2026年3-6月业绩</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fbf6', 100: '#dcf6ea', 200: '#bcecd7',
+                            300: '#8cddba', 400: '#54c498', 500: '#32a87a',
+                            600: '#238860', 700: '#1d6d4f', 800: '#1a5740',
+                            900: '#164835', 950: '#0c291f',
+                        },
+                        dark: {
+                            50: '#f6f6f9', 100: '#ececf3', 200: '#d5d5e3',
+                            300: '#b1b1ca', 400: '#8585aa', 500: '#63638d',
+                            600: '#4e4e75', 700: '#3f3f60', 800: '#232338',
+                            900: '#121220', 950: '#07070d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #07070d;
+            background-image:
+                radial-gradient(at 10% 20%, rgba(234, 179, 8, 0.06) 0px, transparent 50%),
+                radial-gradient(at 90% 80%, rgba(50, 168, 122, 0.06) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+        .glass {
+            background: rgba(23, 23, 41, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-card {
+            background: rgba(18, 18, 32, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(234, 179, 8, 0.3);
+            box-shadow: 0 8px 30px -8px rgba(234, 179, 8, 0.12);
+            transform: translateY(-3px);
+        }
+        .text-glow {
+            text-shadow: 0 0 30px rgba(234, 179, 8, 0.35);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #07070d; }
+        ::-webkit-scrollbar-thumb { background: #232338; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #eab308; }
+
+        .rank-badge {
+            width: 48px; height: 48px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 18px;
+        }
+        .counter { font-variant-numeric: tabular-nums; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in { animation: fadeInUp 0.6s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="text-gray-200 min-h-screen overflow-x-hidden">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 w-full glass border-b border-white/5 py-4 px-6 md:px-10 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-yellow-400 to-amber-500 flex items-center justify-center text-white shadow-lg shadow-amber-500/20">
+                <i class="fa-solid fa-chart-line text-xl"></i>
+            </div>
+            <div>
+                <span class="font-bold text-lg text-white block tracking-wide">ADS XIE</span>
+                <span class="text-xs text-yellow-400 font-medium tracking-widest uppercase font-mono">PORTFOLIO</span>
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+            <a href="#hero" class="text-gray-400 hover:text-yellow-400 transition-colors">首页</a>
+            <a href="#kpi" class="text-gray-400 hover:text-yellow-400 transition-colors">核心指标</a>
+            <a href="#monthly" class="text-gray-400 hover:text-yellow-400 transition-colors">月度数据</a>
+            <a href="#rank" class="text-gray-400 hover:text-yellow-400 transition-colors">团队排名</a>
+            <a href="#charts" class="text-gray-400 hover:text-yellow-400 transition-colors">趋势图表</a>
+            <a href="#insight" class="text-gray-400 hover:text-yellow-400 transition-colors">策略洞察</a>
+        </nav>
+        <div class="flex items-center space-x-3">
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
+                投放优化师 · 2026 Q2
+            </span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative py-20 px-6 md:px-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs font-semibold">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
+                </span>
+                <span>TikTok 投放优化师 · 印尼 & 越南市场</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                Q2 全团队<br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 text-glow">
+                    GMV 第①名
+                </span>
+            </h1>
+
+            <p class="text-gray-400 text-base sm:text-lg max-w-2xl leading-relaxed">
+                我是 <b class="text-white">谢培智</b>，专注 TikTok 印尼和越南健康类产品投放。2026年3-6月期间，累计 GMV 收入超 <b class="text-yellow-400">$554,460</b>，消耗 $204,751，综合 ROI 稳定在 <b class="text-yellow-400">2.37 - 3.61</b> 之间。<b class="text-white">连续4个月蝉联团队 GMV 冠军。</b>
+            </p>
+
+            <div class="flex flex-wrap gap-4 pt-2">
+                <a href="#kpi" class="px-6 py-3 rounded-xl bg-yellow-500 hover:bg-yellow-600 text-dark-900 font-semibold text-sm shadow-lg shadow-yellow-500/30 transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    <span>查看数据</span>
+                </a>
+                <a href="#charts" class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 font-semibold text-sm border border-white/10 transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-chart-mixed"></i>
+                    <span>趋势图表</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Hero Stats -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+            <div class="glass-card rounded-2xl p-5 space-y-1">
+                <div class="text-xs text-gray-500 font-medium uppercase tracking-widest">Q2 总 GMV 收入</div>
+                <div class="text-2xl font-extrabold text-yellow-400 font-mono">$554,460</div>
+                <div class="text-xs text-yellow-400/70 flex items-center space-x-1">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>全团队冠军</span>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl p-5 space-y-1">
+                <div class="text-xs text-gray-500 font-medium uppercase tracking-widest">Q2 总消耗</div>
+                <div class="text-2xl font-extrabold text-white font-mono">$204,751</div>
+                <div class="text-xs text-gray-500 flex items-center space-x-1">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                    <span>广告投入</span>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl p-5 space-y-1">
+                <div class="text-xs text-gray-500 font-medium uppercase tracking-widest">Q2 总订单</div>
+                <div class="text-2xl font-extrabold text-white font-mono">115,901</div>
+                <div class="text-xs text-gray-500 flex items-center space-x-1">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span>笔订单</span>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl p-5 space-y-1">
+                <div class="text-xs text-gray-500 font-medium uppercase tracking-widest">综合 ROI</div>
+                <div class="text-2xl font-extrabold text-white font-mono">2.71</div>
+                <div class="text-xs text-yellow-400/70 flex items-center space-x-1">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                    <span>平均综合</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KPI Cards -->
+    <section id="kpi" class="py-16 px-6 md:px-10 max-w-7xl mx-auto">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold text-white mb-2">核心业绩指标</h2>
+            <p class="text-gray-500 text-sm">2026年3月 - 6月，各月关键数据一览</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
+
+            <!-- 3月 GMV -->
+            <div class="glass-card rounded-2xl p-5 animate-in delay-1">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-yellow-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-coins text-yellow-400"></i>
+                    </div>
+                    <span class="text-xs text-gray-600 font-mono">3月</span>
+                </div>
+                <div class="text-xl font-extrabold text-yellow-400 font-mono counter">$207,999</div>
+                <div class="text-xs text-gray-500 mt-1">GMV 收入 ← 峰值</div>
+                <div class="mt-2 flex items-center space-x-1">
+                    <span class="px-1.5 py-0.5 rounded text-xs bg-yellow-500/10 text-yellow-400 font-medium">ROI 2.37</span>
+                </div>
+            </div>
+
+            <!-- 4月 GMV -->
+            <div class="glass-card rounded-2xl p-5 animate-in delay-2">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-coins text-blue-400"></i>
+                    </div>
+                    <span class="text-xs text-gray-600 font-mono">4月</span>
+                </div>
+                <div class="text-xl font-extrabold text-white font-mono counter">$78,307</div>
+                <div class="text-xs text-gray-500 mt-1">GMV 收入</div>
+                <div class="mt-2 flex items-center space-x-1">
+                    <span class="px-1.5 py-0.5 rounded text-xs bg-yellow-500/10 text-yellow-400 font-medium">ROI 3.61</span>
+                </div>
+            </div>
+
+            <!-- 5月 GMV -->
+            <div class="glass-card rounded-2xl p-5 animate-in delay-3">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-brand-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-coins text-brand-400"></i>
+                    </div>
+                    <span class="text-xs text-gray-600 font-mono">5月</span>
+                </div>
+                <div class="text-xl font-extrabold text-white font-mono counter">$126,763</div>
+                <div class="text-xs text-gray-500 mt-1">GMV 收入</div>
+                <div class="mt-2 flex items-center space-x-1">
+                    <span class="px-1.5 py-0.5 rounded text-xs bg-yellow-500/10 text-yellow-400 font-medium">ROI 2.72</span>
+                </div>
+            </div>
+
+            <!-- 6月 GMV -->
+            <div class="glass-card rounded-2xl p-5 animate-in delay-4">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-coins text-purple-400"></i>
+                    </div>
+                    <span class="text-xs text-gray-600 font-mono">6月</span>
+                </div>
+                <div class="text-xl font-extrabold text-white font-mono counter">$141,392</div>
+                <div class="text-xs text-gray-500 mt-1">GMV 收入</div>
+                <div class="mt-2 flex items-center space-x-1">
+                    <span class="px-1.5 py-0.5 rounded text-xs bg-yellow-500/10 text-yellow-400 font-medium">ROI 2.92</span>
+                </div>
+            </div>
+
+            <!-- 累计消耗 -->
+            <div class="glass-card rounded-2xl p-5 animate-in delay-5">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-red-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-fire-flame-curved text-red-400"></i>
+                    </div>
+                    <span class="text-xs text-gray-600 font-mono">累计</span>
+                </div>
+                <div class="text-xl font-extrabold text-white font-mono counter">$204,751</div>
+                <div class="text-xs text-gray-500 mt-1">总广告消耗</div>
+                <div class="mt-2 flex items-center space-x-1">
+                    <span class="px-1.5 py-0.5 rounded text-xs bg-gray-500/10 text-gray-400 font-medium">USD</span>
+                </div>
+            </div>
+
+            <!-- 累计订单 -->
+            <div class="glass-card rounded-2xl p-5 animate-in delay-6">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-yellow-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-basket-shopping text-yellow-400"></i>
+                    </div>
+                    <span class="text-xs text-gray-600 font-mono">累计</span>
+                </div>
+                <div class="text-xl font-extrabold text-yellow-400 font-mono counter">115,901</div>
+                <div class="text-xs text-gray-500 mt-1">总订单量</div>
+                <div class="mt-2 flex items-center space-x-1">
+                    <span class="px-1.5 py-0.5 rounded text-xs bg-yellow-500/10 text-yellow-400 font-medium">笔</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROI Highlight Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass-card rounded-2xl p-5 text-center">
+                <div class="text-3xl font-extrabold text-yellow-400 font-mono mb-1">2.37</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">3月 ROI</div>
+                <div class="mt-2 flex justify-center">
+                    <div class="w-full bg-dark-800 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-gradient-to-r from-yellow-400 to-amber-500 h-1.5 rounded-full" style="width: 66%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl p-5 text-center">
+                <div class="text-3xl font-extrabold text-yellow-400 font-mono mb-1">3.61</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">4月 ROI ← 最高</div>
+                <div class="mt-2 flex justify-center">
+                    <div class="w-full bg-dark-800 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-gradient-to-r from-yellow-400 to-emerald-400 h-1.5 rounded-full" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl p-5 text-center">
+                <div class="text-3xl font-extrabold text-white font-mono mb-1">2.72</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">5月 ROI</div>
+                <div class="mt-2 flex justify-center">
+                    <div class="w-full bg-dark-800 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 h-1.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl p-5 text-center">
+                <div class="text-3xl font-extrabold text-white font-mono mb-1">2.92</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">6月 ROI</div>
+                <div class="mt-2 flex justify-center">
+                    <div class="w-full bg-dark-800 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-gradient-to-r from-yellow-400 to-purple-400 h-1.5 rounded-full" style="width: 81%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Detail Table -->
+    <section id="monthly" class="py-16 px-6 md:px-10 max-w-7xl mx-auto">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-2">月度详细数据</h2>
+            <p class="text-gray-500 text-sm">收入、订单、消耗与 ROI 全维度对比</p>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-white/5">
+                            <th class="text-left px-6 py-4 text-xs text-gray-500 font-medium uppercase tracking-widest">月份</th>
+                            <th class="text-right px-4 py-4 text-xs text-gray-500 font-medium uppercase tracking-widest">GMV 收入</th>
+                            <th class="text-right px-4 py-4 text-xs text-gray-500 font-medium uppercase tracking-widest">GMV 订单</th>
+                            <th class="text-right px-4 py-4 text-xs text-gray-500 font-medium uppercase tracking-widest">GMV 消耗</th>
+                            <th class="text-right px-4 py-4 text-xs text-gray-500 font-medium uppercase tracking-widest">综合 ROI</th>
+                            <th class="text-right px-4 py-4 text-xs text-gray-500 font-medium uppercase tracking-widest">月度排名</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5">
+                        <tr class="hover:bg-white/[0.02] transition-colors bg-yellow-500/[0.03]">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-yellow-500/20 flex items-center justify-center text-xs font-bold text-yellow-400">3月</div>
+                                    <span class="text-white font-medium">2026年3月</span>
+                                    <span class="px-1.5 py-0.5 rounded text-[10px] bg-yellow-500/20 text-yellow-400 font-bold">峰值月</span>
+                                </div>
+                            </td>
+                            <td class="text-right px-4 py-4 font-mono font-semibold text-yellow-400 text-base">$207,998.74</td>
+                            <td class="text-right px-4 py-4 font-mono text-gray-300">36,581</td>
+                            <td class="text-right px-4 py-4 font-mono text-gray-300">$87,953.01</td>
+                            <td class="text-right px-4 py-4">
+                                <span class="px-2 py-1 rounded-lg bg-yellow-500/10 text-yellow-400 font-mono font-bold">2.365</span>
+                            </td>
+                            <td class="text-right px-4 py-4">
+                                <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs font-bold">🥇 第1名</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02] transition-colors bg-brand-500/[0.03]">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-xs font-bold text-blue-400">4月</div>
+                                    <span class="text-white font-medium">2026年4月</span>
+                                    <span class="px-1.5 py-0.5 rounded text-[10px] bg-blue-500/20 text-blue-400 font-bold">ROI最优</span>
+                                </div>
+                            </td>
+                            <td class="text-right px-4 py-4 font-mono font-semibold text-white">$78,306.84</td>
+                            <td class="text-right px-4 py-4 font-mono text-gray-300">22,104</td>
+                            <td class="text-right px-4 py-4 font-mono text-gray-300">$21,724.49</td>
+                            <td class="text-right px-4 py-4">
+                                <span class="px-2 py-1 rounded-lg bg-yellow-500/10 text-yellow-400 font-mono font-bold">3.605</span>
+                            </td>
+                            <td class="text-right px-4 py-4">
+                                <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs font-bold">🥇 第1名</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02] transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-brand-500/20 flex items-center justify-center text-xs font-bold text-brand-400">5月</div>
+                                    <span class="text-white font-medium">2026年5月</span>
+                                </div>
+                            </td>
+                            <td class="text-right px-4 py-4 font-mono font-semibold text-white">$126,763.00</td>
+                            <td class="text-right px-4 py-4 font-mono text-gray-300">26,342</td>
+                            <td class="text-right px-4 py-4 font-mono text-gray-300">$46,654.23</td>
+                            <td class="text-right px-4 py-4">
+                                <span class="px-2 py-1 rounded-lg bg-yellow-500/10 text-yellow-400 font-mono font-bold">2.717</span>
+                            </td>
+                            <td class="text-right px-4 py-4">
+                                <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs font-bold">🥇 第1名</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02] transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center text-xs font-bold text-purple-400">6月</div>
+                                    <span class="text-white font-medium">2026年6月</span>
+                                </div>
+                            </td>
+                            <td class="text-right px-4 py-4 font-mono font-semibold text-white">$141,392.24</td>
+                            <td class="text-right px-4 py-4 font-mono text-gray-300">30,874</td>
+                            <td class="text-right px-4 py-4 font-mono text-gray-300">$48,419.72</td>
+                            <td class="text-right px-4 py-4">
+                                <span class="px-2 py-1 rounded-lg bg-yellow-500/10 text-yellow-400 font-mono font-bold">2.920</span>
+                            </td>
+                            <td class="text-right px-4 py-4">
+                                <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs font-bold">🥇 第1名</span>
+                            </td>
+                        </tr>
+                        <!-- Total Row -->
+                        <tr class="border-t border-white/10 bg-dark-800/50">
+                            <td class="px-6 py-4">
+                                <span class="text-white font-bold">合计 / 平均</span>
+                            </td>
+                            <td class="text-right px-4 py-4 font-mono font-bold text-yellow-400 text-base">$554,460</td>
+                            <td class="text-right px-4 py-4 font-mono font-bold text-white">115,901</td>
+                            <td class="text-right px-4 py-4 font-mono font-bold text-white">$204,751</td>
+                            <td class="text-right px-4 py-4">
+                                <span class="px-2 py-1 rounded-lg bg-yellow-500/20 text-yellow-300 font-mono font-bold text-base">2.71</span>
+                            </td>
+                            <td class="text-right px-4 py-4">
+                                <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs font-bold">🥇 4连冠</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Ranking -->
+    <section id="rank" class="py-16 px-6 md:px-10 max-w-7xl mx-auto">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-2">团队排名对比</h2>
+            <p class="text-gray-500 text-sm">每月在团队中的排名位置（竞争者：陈敏潼、冯云良）</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+
+            <!-- 3月 -->
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-5">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-widest">3月</h3>
+                    <span class="text-xs text-gray-500 font-mono">Mar 2026</span>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-yellow-500/10 text-yellow-400">🥇</div>
+                            <div>
+                                <div class="text-sm font-semibold text-yellow-400">谢培智</div>
+                                <div class="text-xs text-yellow-400/70 font-medium">本人</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-yellow-400 font-mono">$207,999</div>
+                            <div class="text-xs text-gray-500">ROI 2.37</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-gray-500/10 text-gray-400">🥈</div>
+                            <div>
+                                <div class="text-sm font-semibold text-white">冯云良</div>
+                                <div class="text-xs text-gray-500">投手</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-white font-mono">$67,232</div>
+                            <div class="text-xs text-gray-500">ROI 2.31</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-gray-500/5 text-gray-600">🥉</div>
+                            <div>
+                                <div class="text-sm font-semibold text-gray-400">陈敏潼</div>
+                                <div class="text-xs text-gray-600">剪投同步</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-gray-500 font-mono">$0</div>
+                            <div class="text-xs text-gray-600">—</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 text-center">
+                    <span class="text-xs text-gray-500">团队排名</span>
+                    <div class="text-2xl font-extrabold text-yellow-400 mt-1">🥇 第1名</div>
+                </div>
+            </div>
+
+            <!-- 4月 -->
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-5">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-widest">4月</h3>
+                    <span class="text-xs text-gray-500 font-mono">Apr 2026</span>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-yellow-500/10 text-yellow-400">🥇</div>
+                            <div>
+                                <div class="text-sm font-semibold text-yellow-400">谢培智</div>
+                                <div class="text-xs text-yellow-400/70 font-medium">本人</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-yellow-400 font-mono">$78,307</div>
+                            <div class="text-xs text-gray-500">ROI 3.61</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-brand-500/10 text-brand-400">🥈</div>
+                            <div>
+                                <div class="text-sm font-semibold text-white">陈敏潼</div>
+                                <div class="text-xs text-gray-500">剪投同步</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-white font-mono">$48,186</div>
+                            <div class="text-xs text-gray-500">ROI 4.61</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-gray-500/10 text-gray-400">🥉</div>
+                            <div>
+                                <div class="text-sm font-semibold text-white">冯云良</div>
+                                <div class="text-xs text-gray-500">投手</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-white font-mono">$43,617</div>
+                            <div class="text-xs text-gray-500">ROI 2.91</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 text-center">
+                    <span class="text-xs text-gray-500">团队排名</span>
+                    <div class="text-2xl font-extrabold text-yellow-400 mt-1">🥇 第1名</div>
+                </div>
+            </div>
+
+            <!-- 5月 -->
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-5">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-widest">5月</h3>
+                    <span class="text-xs text-gray-500 font-mono">May 2026</span>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-yellow-500/10 text-yellow-400">🥇</div>
+                            <div>
+                                <div class="text-sm font-semibold text-yellow-400">谢培智</div>
+                                <div class="text-xs text-yellow-400/70 font-medium">本人</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-yellow-400 font-mono">$126,763</div>
+                            <div class="text-xs text-gray-500">ROI 2.72</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-brand-500/10 text-brand-400">🥈</div>
+                            <div>
+                                <div class="text-sm font-semibold text-white">陈敏潼</div>
+                                <div class="text-xs text-gray-500">剪投同步</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-white font-mono">$117,620</div>
+                            <div class="text-xs text-gray-500">ROI 3.77</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-gray-500/10 text-gray-400">🥉</div>
+                            <div>
+                                <div class="text-sm font-semibold text-white">冯云良</div>
+                                <div class="text-xs text-gray-500">投手</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-white font-mono">$109,156</div>
+                            <div class="text-xs text-gray-500">ROI 2.24</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 text-center">
+                    <span class="text-xs text-gray-500">团队排名</span>
+                    <div class="text-2xl font-extrabold text-yellow-400 mt-1">🥇 第1名</div>
+                </div>
+            </div>
+
+            <!-- 6月 -->
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-5">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-widest">6月</h3>
+                    <span class="text-xs text-gray-500 font-mono">Jun 2026</span>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-yellow-500/10 text-yellow-400">🥇</div>
+                            <div>
+                                <div class="text-sm font-semibold text-yellow-400">谢培智</div>
+                                <div class="text-xs text-yellow-400/70 font-medium">本人</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-yellow-400 font-mono">$141,392</div>
+                            <div class="text-xs text-gray-500">ROI 2.92</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-brand-500/10 text-brand-400">🥈</div>
+                            <div>
+                                <div class="text-sm font-semibold text-white">陈敏潼</div>
+                                <div class="text-xs text-gray-500">剪投同步</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-white font-mono">$99,973</div>
+                            <div class="text-xs text-gray-500">ROI 3.41</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="rank-badge bg-gray-500/10 text-gray-400">🥉</div>
+                            <div>
+                                <div class="text-sm font-semibold text-white">冯云良</div>
+                                <div class="text-xs text-gray-500">投手</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-bold text-white font-mono">$34,178</div>
+                            <div class="text-xs text-gray-500">ROI 2.28</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 text-center">
+                    <span class="text-xs text-gray-500">团队排名</span>
+                    <div class="text-2xl font-extrabold text-yellow-400 mt-1">🥇 第1名</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section id="charts" class="py-16 px-6 md:px-10 max-w-7xl mx-auto">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-2">趋势图表</h2>
+            <p class="text-gray-500 text-sm">收入、消耗、订单量与 ROI 的月度变化趋势</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- GMV收入 & 消耗 -->
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-base font-bold text-white">GMV收入 vs 广告消耗</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">每月收入与消耗走势</p>
+                    </div>
+                    <div class="flex items-center space-x-4 text-xs">
+                        <div class="flex items-center space-x-1.5">
+                            <div class="w-3 h-3 rounded-sm bg-yellow-400"></div>
+                            <span class="text-gray-400">GMV 收入</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5">
+                            <div class="w-3 h-3 rounded-sm bg-red-400"></div>
+                            <span class="text-gray-400">广告消耗</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-64">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+
+            <!-- ROI Trend -->
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-base font-bold text-white">综合 ROI 趋势</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">月度投资回报率变化</p>
+                    </div>
+                    <div class="flex items-center space-x-4 text-xs">
+                        <div class="flex items-center space-x-1.5">
+                            <div class="w-3 h-3 rounded-sm bg-yellow-400"></div>
+                            <span class="text-gray-400">综合 ROI</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5">
+                            <div class="w-3 h-3 rounded-sm bg-gray-600"></div>
+                            <span class="text-gray-400">基准线 2.0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-64">
+                    <canvas id="roiChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Order Volume -->
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-base font-bold text-white">订单量趋势</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">每月 GMV 订单笔数</p>
+                    </div>
+                </div>
+                <div class="h-64">
+                    <canvas id="orderChart"></canvas>
+                </div>
+            </div>
+
+            <!-- CPO -->
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-base font-bold text-white">单笔订单成本 (CPO)</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">广告消耗 ÷ 订单量</p>
+                    </div>
+                </div>
+                <div class="h-64">
+                    <canvas id="cpoChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insight Section -->
+    <section id="insight" class="py-16 px-6 md:px-10 max-w-7xl mx-auto">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-white mb-2">策略洞察与分析</h2>
+            <p class="text-gray-500 text-sm">基于数据的关键发现与优化方向</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+            <div class="glass-card rounded-2xl p-6">
+                <div class="w-10 h-10 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-trophy text-yellow-400 text-lg"></i>
+                </div>
+                <h3 class="text-white font-bold mb-2">4连冠 GMV 冠军</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    3月至6月连续4个月 GMV 收入排名团队第一，累计 GMV $554,460，比第二名陈敏潼高出 <b class="text-yellow-400">$113,138</b>，领先幅度达 <b class="text-yellow-400">+26%</b>。
+                </p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-bullseye text-blue-400 text-lg"></i>
+                </div>
+                <h3 class="text-white font-bold mb-2">4月 ROI 爆发</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    4月综合 ROI 达 <b class="text-yellow-400">3.605</b>，Q2最高值。当月消耗 $21,724，获订单 22,104 笔，CPO 仅 <b class="text-yellow-400">$0.98/单</b>，资金效率极为出色。
+                </p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+                <div class="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-arrow-trend-up text-brand-400 text-lg"></i>
+                </div>
+                <h3 class="text-white font-bold mb-2">6月强势反弹</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    6月 GMV $141,392，较5月增长 <b class="text-yellow-400">+11.5%</b>，订单量达 30,874 笔（Q2最高），ROI 2.92 保持稳健。证明素材策略持续有效，消耗可进一步放量。
+                </p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-layer-group text-purple-400 text-lg"></i>
+                </div>
+                <h3 class="text-white font-bold mb-2">CPO 控制能力</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Q2 平均 CPO 为 <b class="text-yellow-400">$1.77/单</b>，4月最低 $0.98，3月最高 $2.40。整体控本能力稳定，通过精细化出价可将平均 CPO 再压低 $0.3 - 0.5。
+                </p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+                <div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-fire-flame-curved text-orange-400 text-lg"></i>
+                </div>
+                <h3 class="text-white font-bold mb-2">消耗规模优势</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Q2 总消耗 $204,751，是冯云良的 <b class="text-yellow-400">2倍</b>。在高消耗下仍维持 2.71 平均 ROI，说明跑量素材稳定性强，账户权重高。
+                </p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+                <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-lightbulb text-red-400 text-lg"></i>
+                </div>
+                <h3 class="text-white font-bold mb-2">增长策略建议</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    6月数据显示增长势能仍在，建议Q3 <b class="text-yellow-400">扩大日预算上限 20-30%</b>，同时对 4月高 ROI 素材进行二次复制测试，冲击月 GMV $200K 目标。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-10 px-6 md:px-10 max-w-7xl mx-auto mt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-yellow-500/20 flex items-center justify-center">
+                    <i class="fa-solid fa-chart-line text-yellow-400 text-sm"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-white text-sm">谢培智 · 投放优化师</span>
+                    <span class="text-xs text-gray-500 block">TikTok 印尼 & 越南市场</span>
+                </div>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-xs text-gray-600">数据来源：2026年3月-6月业绩PDF · 数据截至 2026/7/3</p>
+                <p class="text-xs text-gray-700 mt-1">Generated by AI Portfolio Builder</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const YELLOW = '#eab308';
+        const YELLOW_LIGHT = '#facc15';
+        const RED = '#f87171';
+        const BRAND = '#32a87a';
+        const BLUE = '#60a5fa';
+        const PURPLE = '#a78bfa';
+        const MONTHS = ['3月', '4月', '5月', '6月'];
+
+        Chart.defaults.color = '#6b7280';
+        Chart.defaults.borderColor = 'rgba(255,255,255,0.04)';
+        Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
+
+        // 1. Revenue vs Spend
+        new Chart(document.getElementById('revenueChart'), {
+            type: 'bar',
+            data: {
+                labels: MONTHS,
+                datasets: [
+                    {
+                        label: 'GMV 收入',
+                        data: [207998.74, 78306.84, 126763.00, 141392.24],
+                        backgroundColor: YELLOW + '99',
+                        borderColor: YELLOW,
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        borderSkipped: false,
+                    },
+                    {
+                        label: '广告消耗',
+                        data: [87953.01, 21724.49, 46654.23, 48419.72],
+                        backgroundColor: 'transparent',
+                        borderColor: RED,
+                        borderWidth: 2.5,
+                        borderRadius: 8,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: RED,
+                        type: 'line',
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(18,18,32,0.95)',
+                        borderColor: 'rgba(255,255,255,0.1)',
+                        borderWidth: 1,
+                        titleColor: '#fff',
+                        callbacks: {
+                            label: ctx => `${ctx.dataset.label}: $${ctx.raw.toLocaleString('en-US', {minimumFractionDigits: 2})}`
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255,255,255,0.03)' },
+                        ticks: { callback: v => '$' + (v >= 1000 ? (v/1000).toFixed(0) + 'K' : v) }
+                    },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 2. ROI Trend
+        new Chart(document.getElementById('roiChart'), {
+            type: 'line',
+            data: {
+                labels: MONTHS,
+                datasets: [
+                    {
+                        label: '综合 ROI',
+                        data: [2.365, 3.605, 2.717, 2.920],
+                        borderColor: YELLOW,
+                        backgroundColor: YELLOW + '22',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 7,
+                        pointBackgroundColor: YELLOW,
+                        pointBorderColor: '#07070d',
+                        pointBorderWidth: 2,
+                    },
+                    {
+                        label: '基准线 2.0',
+                        data: [2.0, 2.0, 2.0, 2.0],
+                        borderColor: '#4b5563',
+                        borderWidth: 1.5,
+                        borderDash: [6, 4],
+                        tension: 0,
+                        pointRadius: 0,
+                        fill: false,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(18,18,32,0.95)',
+                        borderColor: 'rgba(255,255,255,0.1)',
+                        borderWidth: 1,
+                        titleColor: '#fff',
+                        callbacks: {
+                            label: ctx => `${ctx.dataset.label}: ${ctx.raw}`
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 1.5,
+                        max: 4.2,
+                        grid: { color: 'rgba(255,255,255,0.03)' },
+                    },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 3. Order Volume
+        new Chart(document.getElementById('orderChart'), {
+            type: 'bar',
+            data: {
+                labels: MONTHS,
+                datasets: [{
+                    label: 'GMV 订单',
+                    data: [36581, 22104, 26342, 30874],
+                    backgroundColor: [
+                        YELLOW + '99',
+                        BLUE + '99',
+                        BRAND + '99',
+                        PURPLE + '99',
+                    ],
+                    borderColor: [YELLOW, BLUE, BRAND, PURPLE],
+                    borderWidth: 2,
+                    borderRadius: 8,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(18,18,32,0.95)',
+                        borderColor: 'rgba(255,255,255,0.1)',
+                        borderWidth: 1,
+                        titleColor: '#fff',
+                        callbacks: {
+                            label: ctx => `${ctx.raw.toLocaleString()} 笔订单`
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255,255,255,0.03)' },
+                        ticks: { callback: v => (v >= 1000 ? (v/1000).toFixed(0) + 'K' : v) }
+                    },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 4. CPO
+        const spend = [87953.01, 21724.49, 46654.23, 48419.72];
+        const orders = [36581, 22104, 26342, 30874];
+        const cpo = spend.map((s, i) => +(s / orders[i]).toFixed(2));
+
+        new Chart(document.getElementById('cpoChart'), {
+            type: 'line',
+            data: {
+                labels: MONTHS,
+                datasets: [
+                    {
+                        label: 'CPO ($/单)',
+                        data: cpo,
+                        borderColor: YELLOW,
+                        backgroundColor: YELLOW + '33',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 7,
+                        pointBackgroundColor: YELLOW,
+                        pointBorderColor: '#07070d',
+                        pointBorderWidth: 2,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(18,18,32,0.95)',
+                        borderColor: 'rgba(255,255,255,0.1)',
+                        borderWidth: 1,
+                        titleColor: '#fff',
+                        callbacks: {
+                            label: ctx => `CPO: $${ctx.raw}/单`
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 3.5,
+                        grid: { color: 'rgba(255,255,255,0.03)' },
+                        ticks: { callback: v => '$' + v }
+                    },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
