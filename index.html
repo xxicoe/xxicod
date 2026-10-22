@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>乔迁之喜 · 诚邀莅临</title>
+<style>
+  :root{
+    --red-deep:#8C1C13;
+    --red:#B3251A;
+    --gold:#C9A227;
+    --gold-light:#E8CB6A;
+    --cream:#FDF8F0;
+    --ink:#3A2A22;
+    --muted:#8A7466;
+    --card:rgba(255,255,255,.72);
+    --shadow:0 18px 50px rgba(70,25,15,.16);
+    --radius:22px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Songti SC",serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #FFE7C2 0%, transparent 55%),
+      radial-gradient(900px 500px at 100% 10%, #FFD9D2 0%, transparent 50%),
+      linear-gradient(180deg,#FFFDFA 0%, #FBF3E8 60%, #F6EADA 100%);
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+  /* ===== 花瓣 / 光斑 ===== */
+  .petals{position:fixed;inset:0;pointer-events:none;z-index:1;}
+  .petal{
+    position:absolute;top:-40px;
+    width:14px;height:14px;
+    background:radial-gradient(circle at 30% 30%, #FFD9C8, #E9A08C);
+    border-radius:60% 0 60% 0;
+    opacity:.65;
+    animation:fall linear infinite;
+    filter:drop-shadow(0 2px 3px rgba(150,60,40,.15));
+  }
+  @keyframes fall{
+    0%{transform:translateY(-10vh) rotate(0deg);opacity:0}
+    10%{opacity:.7}
+    100%{transform:translateY(108vh) translateX(60px) rotate(540deg);opacity:0}
+  }
+  .glow{position:fixed;border-radius:50%;filter:blur(60px);opacity:.35;pointer-events:none;z-index:0;animation:float 12s ease-in-out infinite;}
+  .glow.a{width:380px;height:380px;background:#F5C88A;top:-120px;left:-100px}
+  .glow.b{width:320px;height:320px;background:#F0A79A;top:40%;right:-120px;animation-delay:-4s}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-40px)}}
+
+  .wrap{position:relative;z-index:2;max-width:640px;margin:0 auto;padding:0 18px 60px;}
+
+  /* ===== 顶部操作 ===== */
+  .toolbar{
+    position:sticky;top:0;z-index:20;
+    display:flex;justify-content:flex-end;gap:8px;
+    padding:14px 0 0;
+  }
+  .chip{
+    border:1px solid rgba(140,28,19,.18);
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(8px);
+    color:var(--red-deep);
+    font-size:13px;padding:7px 14px;border-radius:999px;cursor:pointer;
+    transition:.25s;box-shadow:0 4px 14px rgba(70,25,15,.08);
+  }
+  .chip:hover{background:var(--red);color:#fff;border-color:var(--red);transform:translateY(-1px)}
+
+  /* ===== HERO ===== */
+  header{
+    text-align:center;padding:46px 10px 30px;
+    animation:rise .9s cubic-bezier(.2,.8,.25,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  .seal{
+    width:74px;height:74px;margin:0 auto 18px;border-radius:16px;
+    background:linear-gradient(145deg,var(--red),var(--red-deep));
+    color:var(--gold-light);font-size:30px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 30px rgba(140,28,19,.35);
+    animation:breathe 3.4s ease-in-out infinite;
+  }
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+  .eyebrow{letter-spacing:.42em;color:var(--gold);font-size:12px;text-transform:uppercase;margin-bottom:12px}
+  h1{
+    font-size:clamp(40px,11vw,64px);line-height:1.12;font-weight:800;
+    background:linear-gradient(100deg,#8C1C13 10%,#C0392B 40%,#C9A227 90%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    letter-spacing:.06em;
+  }
+  .sub{color:var(--muted);margin-top:12px;font-size:15px;letter-spacing:.16em}
+  .ornament{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px auto 0;max-width:220px;color:var(--gold)}
+  .ornament span{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .ornament i{font-style:normal;font-size:15px}
+
+  .countdown{
+    display:flex;justify-content:center;gap:10px;margin-top:26px;
+  }
+  .cd{
+    background:var(--card);backdrop-filter:blur(10px);
+    border:1px solid rgba(201,162,39,.28);border-radius:14px;
+    min-width:62px;padding:10px 6px;box-shadow:var(--shadow);
+  }
+  .cd b{display:block;font-size:24px;color:var(--red-deep);font-variant-numeric:tabular-nums}
+  .cd small{font-size:11px;color:var(--muted);letter-spacing:.1em}
+
+  /* ===== 卡片 ===== */
+  section{
+    background:var(--card);backdrop-filter:blur(14px);
+    border:1px solid rgba(201,162,39,.22);
+    border-radius:var(--radius);padding:26px 22px;margin-top:20px;
+    box-shadow:var(--shadow);
+    opacity:0;transform:translateY(26px);
+    transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.25,1);
+  }
+  section.show{opacity:1;transform:none}
+  h2{
+    font-size:19px;color:var(--red-deep);letter-spacing:.14em;
+    display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  }
+  h2::before{content:"";width:6px;height:20px;border-radius:3px;background:linear-gradient(var(--gold),var(--red))}
+  p{font-size:15px;line-height:1.95;color:#4A382E}
+  .line{height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,39,.5),transparent);margin:16px 0}
+  .info{display:flex;gap:14px;align-items:flex-start;padding:12px 0}
+  .info .ico{
+    flex:0 0 40px;height:40px;border-radius:12px;display:grid;place-items:center;
+    background:linear-gradient(145deg,rgba(201,162,39,.18),rgba(178,37,26,.12));
+    font-size:19px;
+  }
+  .info .t{font-size:12px;color:var(--gold);letter-spacing:.2em;margin-bottom:4px}
+  .info .d{font-size:15px;line-height:1.7}
+  .lunar{font-size:13px;color:var(--gold);letter-spacing:.16em;margin-top:3px}
+  .editable{outline:none;border-radius:6px;transition:.2s;}
+  .editable:hover{background:rgba(201,162,39,.12)}
+  .editable:focus{background:rgba(201,162,39,.18);box-shadow:0 0 0 2px rgba(201,162,39,.35)}
+  .editable:empty::before{content:attr(data-ph);color:#B8A79A;font-style:italic}
+
+  /* 倒计时结束提示 */
+  .badge{display:inline-block;background:rgba(201,162,39,.14);color:var(--gold);
+    border:1px solid rgba(201,162,39,.35);border-radius:999px;padding:4px 12px;font-size:12px;letter-spacing:.14em}
+
+  /* ===== 导航按钮 ===== */
+  .navgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
+  .navbtn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    border:1px solid rgba(140,28,19,.16);border-radius:14px;padding:12px 8px;
+    font-size:14px;color:var(--red-deep);background:rgba(255,255,255,.75);
+    text-decoration:none;cursor:pointer;transition:.25s;
+  }
+  .navbtn:hover{background:var(--red);color:#fff;border-color:var(--red);transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(140,28,19,.25)}
+  .navbtn.wide{grid-column:span 2}
+  .addr{
+    margin-top:14px;background:rgba(255,255,255,.8);border:1px dashed rgba(201,162,39,.55);
+    border-radius:14px;padding:14px;text-align:center;font-size:14px;line-height:1.8;color:#5B463A;
+  }
+
+  /* ===== RSVP ===== */
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12px;color:var(--gold);letter-spacing:.18em;margin-bottom:6px}
+  .field input,.field select,.field textarea{
+    width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(140,28,19,.18);
+    background:rgba(255,255,255,.85);font-size:15px;color:var(--ink);font-family:inherit;
+    transition:.2s;outline:none;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.18)}
+  .attend{display:flex;gap:10px}
+  .attend button{
+    flex:1;padding:12px;border-radius:12px;border:1px solid rgba(140,28,19,.2);
+    background:rgba(255,255,255,.8);font-size:15px;color:var(--red-deep);cursor:pointer;font-family:inherit;transition:.2s}
+  .attend button.on{background:var(--red);color:#fff;border-color:var(--red)}
+  .submit{
+    width:100%;padding:14px;border:none;border-radius:14px;cursor:pointer;font-family:inherit;
+    background:linear-gradient(135deg,var(--red),var(--red-deep));color:#fff;font-size:16px;letter-spacing:.2em;
+    box-shadow:0 12px 26px rgba(140,28,19,.3);transition:.25s}
+  .submit:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(140,28,19,.38)}
+  .submit:active{transform:translateY(0)}
+  .done{display:none;text-align:center;padding:18px 6px}
+  .done .ok{width:56px;height:56px;border-radius:50%;background:linear-gradient(145deg,var(--red),var(--red-deep));
+    color:#fff;display:grid;place-items:center;font-size:26px;margin:0 auto 12px;animation:pop .5s cubic-bezier(.2,1.4,.4,1)}
+  @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+
+  .footer{text-align:center;color:var(--muted);font-size:13px;letter-spacing:.3em;margin-top:28px;
+    padding-top:20px;border-top:1px solid rgba(201,162,39,.25)}
+  .toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+    background:rgba(58,42,34,.94);color:#FFF6E6;padding:11px 20px;border-radius:999px;font-size:14px;
+    opacity:0;pointer-events:none;transition:.3s;z-index:50}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:380px){
+    .navgrid{grid-template-columns:1fr}
+    .navbtn.wide{grid-column:span 1}
+    .cd{min-width:54px}
+  }
+</style>
+</head>
+<body>
+<div class="glow a"></div><div class="glow b"></div>
+<div class="petals" id="petals"></div>
+
+<div class="wrap">
+
+  <div class="toolbar">
+    <button class="chip" id="editBtn">✎ 编辑内容</button>
+    <button class="chip" id="shareBtn">↗ 分享邀请函</button>
+  </div>
+
+  <header>
+    <div class="seal">囍</div>
+    <div class="eyebrow">Invitation</div>
+    <h1>乔迁之喜</h1>
+    <div class="sub">新居落成 恭迎贵客</div>
+    <div class="ornament"><span></span><i>❖</i><span></span></div>
+    <div class="countdown" id="countdown">
+      <div class="cd"><b id="cd-d">--</b><small>天</small></div>
+      <div class="cd"><b id="cd-h">--</b><small>时</small></div>
+      <div class="cd"><b id="cd-m">--</b><small>分</small></div>
+      <div class="cd"><b id="cd-s">--</b><small>秒</small></div>
+    </div>
+  </header>
+
+  <section id="sec-intro">
+    <h2>敬请光临</h2>
+    <p id="intro-text" class="editable" data-ph="在此填写邀请辞，例如：值此乔迁新居之际，谨备薄宴，恭请台驾光临……">
+      值此乔迁新居之际，谨备薄宴一席，诚邀阁下拨冗莅临，共叙欢愉。
+    </p>
+    <div class="line"></div>
+    <p style="text-align:center;color:var(--gold);letter-spacing:.24em">敬备喜筵　恭候光临</p>
+  </section>
+
+  <section id="sec-info">
+    <h2>喜宴信息</h2>
+
+    <div class="info">
+      <div class="ico">📅</div>
+      <div>
+        <div class="t">日期</div>
+        <div class="d editable" id="f-date" data-ph="例如：2026年11月26日 星期四">2026年11月26日 星期四</div>
+        <div class="lunar" id="f-lunar">农历十月十八</div>
+      </div>
+    </div>
+    <div class="info">
+      <div class="ico">🕐</div>
+      <div>
+        <div class="t">时间</div>
+        <div class="d editable" id="f-time" data-ph="例如：18:00 入席">18:00 入席</div>
+      </div>
+    </div>
+    <div class="info">
+      <div class="ico">🏠</div>
+      <div>
+        <div class="t">地址</div>
+        <div class="d editable" id="f-addr" data-ph="请填写新居 / 餐厅详细地址">新居地址待定，餐厅地址待补充</div>
+      </div>
+    </div>
+    <div class="info">
+      <div class="ico">👤</div>
+      <div>
+        <div class="t">主人</div>
+        <div class="d editable" id="f-host" data-ph="例如：XXX 一家 敬邀">XXX 一家 敬邀</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sec-nav">
+    <h2>一键导航</h2>
+    <div class="addr" id="addr-view">新居地址待定，餐厅地址待补充</div>
+    <div class="navgrid" style="margin-top:14px">
+      <a class="navbtn" id="btn-amap" target="_blank" rel="noopener">🧭 高德地图</a>
+      <a class="navbtn" id="btn-bmap" target="_blank" rel="noopener">🗺️ 百度地图</a>
+      <a class="navbtn" id="btn-gmap" target="_blank" rel="noopener">🌐 Google 地图</a>
+      <a class="navbtn" id="btn-apple" target="_blank" rel="noopener">🍎 Apple 地图</a>
+      <button class="navbtn" id="btn-copy">📋 复制地址</button>
+      <button class="navbtn" id="btn-call">📞 联系主人</button>
+    </div>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:14px;text-align:center">
+      导航前请在顶部「✎ 编辑内容」中补全地址，再点击即可跳转对应地图 App / 网页。
+    </p>
+  </section>
+
+  <section id="sec-rsvp">
+    <h2>出席回执</h2>
+    <form id="rsvp-form">
+      <div class="field">
+        <label>您的称呼</label>
+        <input id="r-name" required placeholder="怎么称呼您？" />
+      </div>
+      <div class="field">
+        <label>出席人数</label>
+        <input id="r-count" type="number" min="1" max="20" value="1" />
+      </div>
+      <div class="field">
+        <label>是否出席</label>
+        <div class="attend">
+          <button type="button" data-a="yes" class="on">欣然赴约</button>
+          <button type="button" data-a="no">遗憾缺席</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>祝福留言</label>
+        <textarea id="r-msg" rows="3" placeholder="写一句温暖的祝福吧…"></textarea>
+      </div>
+      <button class="submit" type="submit">提交回执</button>
+    </form>
+    <div class="done" id="rsvp-done">
+      <div class="ok">✓</div>
+      <p id="done-text">回执已记录，期待您的光临！</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px">
+        回执将提交至主人服务器，由主人统一收取；若暂时无法连接，会暂存本机并在恢复后自动补传。
+      </p>
+    </div>
+  </section>
+
+  <div class="footer">囍 · 敬 请 光 临 · 囍</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =========================================================
+   可修改配置区：直接改这里的值即可
+   ========================================================= */
+const CONFIG = {
+  eventDate: "2026-11-26T18:00:00",   // 宴会时间（本地时间）
+  lunar    : "农历十月十八",            // 农历标注
+  address : "",                          // 详细地址，留空则用页面上的占位文本
+  phone   : "",                          // 联系电话，留空则“联系主人”提示先补电话
+  eventTitle: "乔迁之喜",
+  apiBase : ""                           // 后端地址，留空表示同源；跨域时填 "http://ip:8000"
+};
+
+/* ---------- 元素 ---------- */
+const $ = s => document.querySelector(s);
+const F = {
+  date: $("#f-date"), time: $("#f-time"), addr: $("#f-addr"),
+  host: $("#f-host"), intro: $("#intro-text")
+};
+const STORE_KEY = "invite_qiaozi_v1";
+
+/* ---------- 读取 / 保存本地内容（方便随时改，刷新不丢） ---------- */
+function loadLocal(){
+  try{
+    const s = JSON.parse(localStorage.getItem(STORE_KEY) || "{}");
+    for(const k of ["date","time","addr","host","intro"]){
+      if(s[k]) F[k].textContent = s[k];
+    }
+  }catch(e){}
+}
+function saveLocal(){
+  const s = {};
+  for(const k of ["date","time","addr","host","intro"]) s[k] = F[k].textContent.trim();
+  localStorage.setItem(STORE_KEY, JSON.stringify(s));
+}
+
+/* ---------- 首次：把 CONFIG 写进页面 ---------- */
+function applyConfig(){
+  if(CONFIG.eventDate){
+    const d = new Date(CONFIG.eventDate);
+    const w = "日一二三四五六"[d.getDay()];
+    F.date.textContent = `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日 星期${w}`;
+    F.time.textContent = `${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")} 入席`;
+  }
+  if(CONFIG.lunar) $("#f-lunar").textContent = CONFIG.lunar;
+  if(CONFIG.address) F.addr.textContent = CONFIG.address;
+}
+
+/* ---------- 倒计时 ---------- */
+function tick(){
+  const target = new Date(CONFIG.eventDate).getTime();
+  const diff = target - Date.now();
+  const set=(id,v)=>document.getElementById(id).textContent=String(v).padStart(2,"0");
+  if(diff <= 0){
+    ["cd-d","cd-h","cd-m","cd-s"].forEach(i=>set(i,"00"));
+    document.querySelector("#countdown .cd small").textContent="已开席";
+    return;
+  }
+  const s = Math.floor(diff/1000);
+  set("cd-d", Math.floor(s/86400));
+  set("cd-h", Math.floor(s%86400/3600));
+  set("cd-m", Math.floor(s%3600/60));
+  set("cd-s", s%60);
+}
+
+/* ---------- 导航链接 ---------- */
+function navLinks(){
+  const addr = F.addr.textContent.trim();
+  if(!addr || addr.includes("待定") || addr.includes("待补充")) return null;
+  const q = encodeURIComponent(addr);
+  return {
+    amap : "https://uri.amap.com/search?keyword="+q+"&city=&src=gmvmax&callnative=1",
+    bmap : "https://api.map.baidu.com/geocoder/v2/?address="+q+"&output=html&src=webapp.gmvmax.invite",
+    gmap : "https://www.google.com/maps/search/?api=1&query="+q,
+    apple: "https://maps.apple.com/?q="+q
+  };
+}
+function bindNav(){
+  const l = navLinks();
+  ["amap","bmap","gmap","apple"].forEach(k=>{
+    const el = document.getElementById("btn-"+k);
+    if(l){
+      el.href = l[k];
+      el.style.opacity = "";
+      el.removeAttribute("onclick");
+    }else{
+      el.removeAttribute("href");
+      el.style.opacity = ".45";
+      el.onclick = e=>{ e.preventDefault(); toast("请先在「✎ 编辑内容」中填写地址"); };
+    }
+  });
+  $("#addr-view").textContent = F.addr.textContent.trim();
+}
+
+/* ---------- 复制地址 ---------- */
+function copyText(t){
+  if(navigator.clipboard && window.isSecureContext){
+    return navigator.clipboard.writeText(t);
+  }
+  const ta = document.createElement("textarea");
+  ta.value = t; ta.style.position="fixed"; ta.style.opacity="0";
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand("copy"); }catch(e){}
+  document.body.removeChild(ta);
+  return Promise.resolve();
+}
+
+/* ---------- Toast ---------- */
+let toastTimer;
+function toast(msg){
+  const t = $("#toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove("show"), 2200);
+}
+
+/* ---------- 编辑模式 ---------- */
+let editing = false;
+function setEditing(on){
+  editing = on;
+  document.querySelectorAll(".editable").forEach(el=>{
+    el.contentEditable = on ? "true" : "false";
+    el.spellcheck = false;
+  });
+  $("#editBtn").textContent = on ? "✓ 完成编辑" : "✎ 编辑内容";
+  toast(on ? "编辑模式已开启，直接点击文字修改" : "已保存修改");
+  if(!on){ saveLocal(); bindNav(); }
+}
+
+/* ---------- 分享 ---------- */
+async function share(){
+  const text = `${CONFIG.eventTitle}｜${F.date.textContent} ${F.time.textContent}｜${F.addr.textContent}`;
+  if(navigator.share){
+    try{ await navigator.share({title:CONFIG.eventTitle, text:text, url:location.href}); return; }catch(e){}
+  }
+  try{
+    await copyText(text);
+    toast("邀请信息已复制，可粘贴分享");
+  }catch(e){ toast("请手动截图分享"); }
+}
+
+/* ---------- RSVP ---------- */
+const API = (CONFIG.apiBase || "") + "/api/rsvp";
+
+async function submitRsvp(payload){
+  try{
+    const res = await fetch(API, {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(payload)
+    });
+    if(!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    if(data && data.ok) return {saved:true, data:data.data};
+    throw new Error("bad response");
+  }catch(e){
+    // 服务端不可用 → 存本地待补传，不丢数据
+    const q = JSON.parse(localStorage.getItem("invite_rsvp_pending")||"[]");
+    q.push({...payload, _pending:true, _at:new Date().toISOString()});
+    localStorage.setItem("invite_rsvp_pending", JSON.stringify(q));
+    return {saved:false, pending:true, error:String(e.message||e)};
+  }
+}
+
+function bindRsvp(){
+  document.querySelectorAll(".attend button").forEach(b=>{
+    b.addEventListener("click",()=>{
+      document.querySelectorAll(".attend button").forEach(x=>x.classList.remove("on"));
+      b.classList.add("on");
+    });
+  });
+  $("#rsvp-form").addEventListener("submit",async e=>{
+    e.preventDefault();
+    const name = $("#r-name").value.trim();
+    if(!name){ toast("请填写您的称呼"); return; }
+    const attendBtn = document.querySelector(".attend button.on");
+    const attend = attendBtn?.dataset.a === "no" ? "no" : "yes";
+    const payload = {
+      name,
+      count: parseInt($("#r-count").value, 10) || 1,
+      attend,
+      message: $("#r-msg").value.trim(),
+      event:`${F.date.textContent} ${F.time.textContent} ${F.addr.textContent}`
+    };
+
+    const btn = $(".submit");
+    btn.disabled = true; btn.textContent = "提交中…";
+    const r = await submitRsvp(payload);
+    btn.disabled = false; btn.textContent = "提交回执";
+
+    if(r.saved){
+      $("#rsvp-form").style.display="none";
+      $("#rsvp-done").style.display="block";
+      $("#done-text").textContent = `${name}，您的回执已记录（${attend==="yes"?"欣然赴约":"遗憾缺席"}），期待您的光临！`;
+      toast("回执已提交");
+    }else{
+      // 服务端暂时不可用：本地已保存
+      toast("暂时无法连接服务器，回执已暂存本地");
+      $("#rsvp-form").style.display="none";
+      $("#rsvp-done").style.display="block";
+      $("#done-text").textContent = `${name}，您的回执已暂存（${attend==="yes"?"欣然赴约":"遗憾缺席"}），稍后会自动提交。`;
+    }
+  });
+}
+
+/* ---------- 补传本地暂存的回执 ---------- */
+async function flushPending(){
+  let q = [];
+  try{ q = JSON.parse(localStorage.getItem("invite_rsvp_pending")||"[]"); }catch(e){}
+  if(!q.length) return;
+  const rest = [];
+  for(const p of q){
+    const r = await submitRsvp(p);
+    if(!r.saved) rest.push(p);
+  }
+  localStorage.setItem("invite_rsvp_pending", JSON.stringify(rest));
+}
+
+/* ---------- 花瓣 ---------- */
+function petals(){
+  const box = $("#petals");
+  for(let i=0;i<18;i++){
+    const p = document.createElement("div");
+    p.className="petal";
+    p.style.left = Math.random()*100+"vw";
+    p.style.animationDuration = (9+Math.random()*9)+"s";
+    p.style.animationDelay = (-Math.random()*12)+"s";
+    p.style.transform = `scale(${0.6+Math.random()*0.9})`;
+    box.appendChild(p);
+  }
+}
+
+/* ---------- 滚动显现 ---------- */
+function reveal(){
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("show"); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll("section").forEach(s=>io.observe(s));
+}
+
+/* ---------- 初始化 ---------- */
+(function init(){
+  loadLocal();
+  applyConfig();
+  bindNav();
+  bindRsvp();
+  petals();
+  reveal();
+  tick();
+  setInterval(tick,1000);
+  flushPending();   // 补传上次暂存的回执
+
+  $("#editBtn").addEventListener("click",()=>setEditing(!editing));
+  $("#shareBtn").addEventListener("click",share);
+  $("#btn-copy").addEventListener("click",()=>{
+    const a = F.addr.textContent.trim();
+    if(!a || a.includes("待定")||a.includes("待补充")){ toast("请先填写地址"); return; }
+    copyText(a).then(()=>toast("地址已复制"));
+  });
+  $("#btn-call").addEventListener("click",()=>{
+    if(!CONFIG.phone){ toast("请在脚本 CONFIG 中填写 phone"); return; }
+    location.href = "tel:"+CONFIG.phone;
+  });
+  // 地址改动后实时更新导航（并保存草稿）
+  F.addr.addEventListener("input",()=>{
+    bindNav();
+    saveLocal();
+  });
+  // 其余可编辑字段改动时也存草稿
+  Object.values(F).forEach(el=>{
+    if(el !== F.addr) el.addEventListener("input", saveLocal);
+  });
+})();
+</script>
+</body>
+</html>
